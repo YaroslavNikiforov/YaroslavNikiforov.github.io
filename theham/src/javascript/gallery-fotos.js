@@ -1,12 +1,22 @@
 let listItems = document.getElementsByClassName('gallery__list-item');
 let list = document.querySelector('.gallery__list');
+let previousSection = document.querySelector('.portfolio');
+let nextSection = document.querySelector('.feedback');
+
+previousSection.onmouseover = function () {
+    list.style.transform = 'rotateX(65deg) rotateY(30deg) rotateZ(-50deg) translateY(-80px) translateX(300px)';
+};
+
+nextSection.onmouseover = function () {
+    list.style.transform = 'rotateX(65deg) rotateY(30deg) rotateZ(-50deg) translateY(-80px) translateX(300px)';
+};
 
 list.onmouseover = function () {
     list.style.transform = 'rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(60px) translateX(0px)';
 };
 
 list.onmouseout = function () {
-    list.style.transform = 'rotateX(30deg) translateY(-70px)';
+    list.style.transform = 'rotateX(30deg) translateY(-30px)';
 };
 
 listItems[0].onclick = function () {
@@ -80,4 +90,5 @@ listItems[8].onclick = function () {
 listItems[8].onblur = function () {
     listItems[8].classList.remove('gallery__list-item-zoom--bottom-right')
 };
+
 
