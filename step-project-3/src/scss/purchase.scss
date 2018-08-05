@@ -1,7 +1,7 @@
 @import "mixin", "variables";
 
 .purchase {
-  background: url("/dist/img/purchase/bg2.jpg") no-repeat center;
+  background: url("../img/purchase/bg2.jpg") no-repeat center;
   background-size: cover;
 
   &__wrapper {
