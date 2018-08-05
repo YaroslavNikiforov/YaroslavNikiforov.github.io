@@ -1,0 +1,281 @@
+@import "mixin", "variables";
+
+.carousel {
+  @include flex-box(center, center, row);
+  padding: 80px 0;
+  box-sizing: border-box;
+
+  &__container {
+    @include flex-box(center, center, column);
+    box-sizing: border-box;
+    padding: 0 10px;
+    width: 1200px;
+    height: 100%;
+    min-width: 320px;
+  }
+
+  &__slick {
+    @include flex-box(flex-start, center, column);
+    border-bottom: 1px solid whitesmoke;
+    padding: 0 20px 57px;
+    width: 80%;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  &__item {
+    @include flex-box(center, center, column);
+    width: 90%;
+    margin: auto;
+    transition: opacity 1s;
+  }
+
+  &__user-wrapper {
+    @include flex-box(flex-start, center, row);
+    margin-bottom: 10px;
+    width: 280px;
+  }
+
+  &__image {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  &__author {
+    color: #635c73;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+  }
+
+  &__login {
+    color: #8d81ac;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    margin: 0;
+  }
+
+  &__text {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+
+    span {
+      color: $purple;
+    }
+  }
+
+  &__time {
+    color: #848e97;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+  }
+
+  &__marker {
+    position: absolute;
+    padding: 0;
+    height: 28px;
+    width: 15px;
+    cursor: pointer;
+    top: 50%;
+    margin-top: -14px;
+    background-color: transparent;
+    border: none;
+
+    &--left {
+      left: 0;
+
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    i {
+      font-size: 25px;
+      color: rgba(71, 71, 71, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+
+      i {
+        color: rgba(71, 71, 71, 1);
+      }
+    }
+  }
+
+  &__social {
+    text-align: center;
+    margin-top: 22px;
+  }
+
+  &__button-wrapper {
+    display: inline-block;
+    text-align: center;
+    width: 240px;
+
+    &:first-child {
+      margin-right: 40px;
+    }
+
+    &:last-child {
+      margin-left: 40px;
+    }
+
+    small {
+      color: #848e97;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      letter-spacing: -1px;
+    }
+  }
+
+  &__button {
+    @include flex-box(center, center, row);
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 11px;
+    margin-top: 35px;
+
+    &--github {
+      background-color: #f3f3f3;
+      color: #273f4c;
+
+      &:hover {
+        background-color: #273f4c;
+        color: #f3f3f3;
+      }
+    }
+
+    &--twitter {
+      background-color: #26a6d1;
+      color: white;
+      border: 1px solid #26a6d1;
+
+      &:hover {
+        background-color: white;
+        color: #26a6d1;
+      }
+    }
+
+    &--facebook {
+      background-color: #3b5998;
+      color: white;
+      border: 1px solid #3b5998;
+
+      &:hover {
+        background-color: white;
+        color: #3b5998;
+      }
+    }
+
+    i {
+      font-size: 25px;
+      position: absolute;
+      left: 20px;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 1040px) {
+  .carousel {
+
+    &__slick {
+      width: 816px;
+    }
+  }
+}
+
+@media only screen and (max-width: 993px) {
+  .carousel {
+    padding: 50px 0;
+
+    &__slick {
+      padding-bottom: 30px;
+    }
+
+    &__social {
+      margin-top: 0;
+    }
+
+    &__button-wrapper {
+
+      &:last-child {
+        display: block;
+        margin: auto;
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width: 837px) {
+  .carousel {
+
+    &__slick {
+      width: 100%;
+    }
+
+    &__social {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 551px) {
+  .carousel {
+
+    &__button-wrapper {
+      width: 45%;
+
+      &:first-child {
+        margin-right: 8%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  .carousel {
+
+    &__text {
+      font-size: 17px;
+    }
+
+    &__time {
+      font-size: 14px;
+    }
+
+    &__button-wrapper {
+      width: 280px;
+      margin: auto;
+
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+
+    &__button {
+      margin-top: 30px;
+    }
+  }
+
+}

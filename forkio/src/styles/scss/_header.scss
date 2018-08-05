@@ -1,0 +1,270 @@
+@import "variables", "mixin";
+@import url('https://fonts.googleapis.com/css?family=Lato:700');
+
+.header {
+  @include flex-box(center, center, row);
+  width: 100%;
+  height: 100px;
+  min-width: 320px;
+  background-color: #222125;
+  z-index: 10;
+
+  &__container {
+    @include flex-box(flex-end, center, row);
+    width: 1200px;
+    height: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  &__logo-link {
+    @include flex-box(space-between, center, row);
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -15px;
+    height: 30px;
+    width: 145px;
+    font-family: 'Lato', sans-serif;
+    color: $purple;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    overflow: visible;
+
+    svg {
+      fill: $purple;
+    }
+
+    &:hover {
+      color: white;
+
+      svg {
+        fill: white;
+      }
+    }
+  }
+
+  &__list {
+    @include flex-box(space-between, center, row);
+    width: 510px;
+    list-style: none;
+    margin: 0 190px 0 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    display: inline-block;
+
+    &:first-child {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $purple;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__button {
+    @include flex-box(center, center, row);
+    box-sizing: border-box;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -19px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 19px;
+    border: 1px solid $purple;
+    background-color: $purple;
+    text-decoration: none;
+    width: 145px;
+    height: 38px;
+
+    &:hover {
+      background-color: white;
+      color: $purple;
+    }
+  }
+
+  &__menu {
+    display: none;
+    border-left: 1px solid white;
+    text-align: right;
+    position: absolute;
+    right: -80px;
+    height: 35px;
+    width: 55px;
+  }
+
+  &__menu-btn {
+    @include flex-box(center, flex-end, column);
+    height: 80%;
+  }
+
+  &__menu-btn--active {
+    @extend .header__menu-btn;
+
+    .header__btn-line--top {
+      width: 30px;
+    }
+
+    .header__btn-line--bottom {
+      width: 24px;
+    }
+  }
+
+  &__btn-line {
+    width: 30px;
+    height: 3px;
+    margin: 3px 0;
+    border-radius: 10px;
+    background-color: white;
+    transition: width 0.3s;
+
+    &--top {
+      width: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 993px) {
+  .header {
+    height: 124px;
+
+    &__container {
+      @include flex-box(center, flex-end, row);
+      width: 100%;
+    }
+
+    &__logo-link {
+      top: 30px;
+      margin-top: 0;
+    }
+
+    &__list {
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
+
+    &__button {
+      top: 25px;
+      margin-top: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  .header {
+    height: 100px;
+
+    &__container {
+      @include flex-box(space-between, center, row);
+    }
+
+    &__logo-link {
+      position: initial;
+    }
+
+    &__list {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      transform: scaleY(0);
+      transform-origin: top;
+      opacity: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: #303030;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    &__list-item {
+      @include flex-box(flex-start, center, row);
+      height: 93px;
+      width: 100%;
+      border-bottom: 1px solid #858585;
+
+      &:first-child {
+        @include flex-box(flex-start, center, row);
+      }
+    }
+
+    &__link {
+      width: 100%;
+      position: relative;
+      padding-left: 25px;
+      line-height: 100px;
+      display: block;
+      color: white;
+      font-size: 32px;
+      font-weight: 400;
+      text-decoration: none;
+
+      &:hover {
+        color: $purple;
+      }
+
+      span {
+        display: block;
+        height: 50px;
+        width: 4px;
+        position: absolute;
+        left: 0;
+        top: 25px;
+        background-color: $purple;
+        visibility: hidden;
+      }
+
+      &:focus {
+        color: #858585;
+        outline: none;
+
+        span {
+          visibility: visible;
+        }
+      }
+    }
+
+    &__button {
+      position: initial;
+    }
+
+    &__menu {
+      @include flex-box(flex-end, center, row);
+      position: initial;
+    }
+  }
+}
+
+@media only screen and (max-width: 381px) {
+  .header {
+
+    &__button {
+      width: 110px;
+    }
+
+    &__menu {
+      width: 45px;
+    }
+
+    &__logo-link {
+      width: 130px;
+      font-size: 22px;
+    }
+  }
+}

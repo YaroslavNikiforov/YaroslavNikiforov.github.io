@@ -1,0 +1,119 @@
+@import "mixin", "variables";
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+
+  a, img, button {
+    user-select: none;
+  }
+}
+
+body *::selection {
+  background-color: $purple;
+  color: white;
+}
+
+.home {
+  @include flex-box(flex-start, center, column);
+  height: 800px;
+  background: url("../../images/home/bg1.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+
+  &__container {
+    @include flex-box(flex-start, center, column);
+    width: 1200px;
+    padding: 0 10px;
+    min-width: 320px;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    color: white;
+    font-size: 82px;
+    margin: 35px 0 0 0;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: $purple;
+    font-size: 30px;
+    margin: 10px 0 0 0;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__text {
+    color: #848e97;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 13px 0 0 0;
+    text-align: center;
+  }
+
+  &__button {
+    @include flex-box(center, center, row);
+    box-sizing: border-box;
+    position: absolute;
+    bottom: -31px;
+    height: 62px;
+    width: 390px;
+    color: white;
+    font-size: 21px;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: $purple;
+    border-radius: 35px;
+    border: 1px solid $purple;
+
+    &:hover {
+      background-color: white;
+      color: $purple;
+    }
+  }
+}
+
+@media only screen and (max-width: 993px) {
+  .home {
+
+    &__container {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 72px;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  .home {
+
+    &__title {
+      font-size: 54px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+    }
+
+    &__button {
+      height: 50px;
+      bottom: -25px;
+      width: 280px;
+      font-size: 18px;
+    }
+  }
+}
+

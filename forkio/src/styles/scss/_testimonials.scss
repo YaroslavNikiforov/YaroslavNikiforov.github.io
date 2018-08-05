@@ -1,0 +1,151 @@
+@import "mixin", "variables";
+
+.testimonials {
+  @include flex-box(center, center, row);
+  box-sizing: border-box;
+  padding: 75px 0 80px;
+  position: relative;
+  background: url("../../images/testimonials/bg2.jpg") no-repeat center -70px;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #4a3b4e;
+    z-index: -1;
+  }
+
+  &__container {
+    @include flex-box(center, center, column);
+    box-sizing: border-box;
+    padding: 0 10px;
+    width: 1200px;
+    height: 100%;
+    min-width: 320px;
+  }
+
+  &__title {
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 80px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 8%;
+    grid-row-gap: 90px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  &__item {
+    @include flex-box(flex-start, center, column);
+  }
+
+  &__logo-wrapper {
+    @include flex-box(center, center, row);
+    height: 65px;
+    width: 188px;
+  }
+
+  &__logo {
+
+    &--one {
+      width: 165px;
+      height: 43px;
+    }
+
+    &--two {
+      width: 148px;
+      height: 50px;
+    }
+
+    &--three {
+      width: 64px;
+      height: 64px;
+    }
+
+    &--four {
+      width: auto;
+      height: 20px;
+    }
+
+    &--five {
+      width: 166px;
+      height: 34px;
+    }
+
+    &--six {
+      width: 108px;
+      height: 34px;
+    }
+  }
+
+  &__text {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    margin: 20px 0 0;
+  }
+
+  &__bottom-line {
+    background-color: rgba(199, 199, 199, 0.2);
+    width: 70%;
+    height: 1px;
+    margin-top: 90px;
+  }
+}
+
+@media only screen and (max-width: 993px) {
+  .testimonials {
+    padding: 60px 0;
+
+    &__container {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 42px;
+      margin: 0 0 60px;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 60px;
+    }
+
+    &__bottom-line {
+      margin-top: 60px;
+    }
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  .testimonials {
+    padding: 60px 0;
+
+    &__title {
+      margin: 0 0 50px;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      grid-row-gap: 50px;
+    }
+
+    &__text {
+      margin-top: 15px;
+    }
+  }
+}
