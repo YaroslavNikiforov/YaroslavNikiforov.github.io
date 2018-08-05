@@ -1,0 +1,106 @@
+@import "mixin", "variables";
+
+.gallery {
+  padding: 80px 30px 170px;
+  overflow: hidden;
+
+  &__container {
+    @include container;
+    perspective: 1000px;
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__lines {
+    @include two-turquoise-lines;
+    margin-bottom: 0;
+  }
+
+  &__lines:hover {
+    @include two-turquoise-lines-hover;
+  }
+
+  &__list {
+    @include margin-padding-zero;
+    list-style: none;
+    user-select: none;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+    margin: auto;
+    width: 90%;
+    transition: all 1s;
+    transform-style: preserve-3d;
+    padding: 50px;
+    box-shadow: 0 0 12px 4px $turquoise;
+    transform: rotateX(65deg) rotateY(30deg) rotateZ(-50deg) translateY(-80px) translateX(300px);
+  }
+
+  &__list-item {
+    transition: all 0.5s;
+    cursor: pointer;
+    padding: 4px;
+    background: rgba(31, 218, 181, 0.2);
+
+    &:hover {
+      box-shadow: 0 0 12px 4px $turquoise;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__list-item-zoom--top {
+    transform: scale(2, 2) translateY(23px);
+    z-index: 1;
+  }
+
+  &__list-item-zoom--top-left {
+    transform: scale(2, 2) translateY(23px) translateX(45px);
+    z-index: 1;
+  }
+
+  &__list-item-zoom--top-right {
+    transform: scale(2, 2) translateY(23px) translateX(-45px);
+    z-index: 1;
+  }
+
+  &__list-item-zoom--center {
+    transform: scale(2, 2);
+    z-index: 1;
+  }
+
+  &__list-item-zoom--center-left {
+    transform: scale(2, 2) translateX(45px);
+    z-index: 1;
+  }
+
+  &__list-item-zoom--center-right {
+    transform: scale(2, 2) translateX(-45px);
+    z-index: 1;
+  }
+
+  &__list-item-zoom--bottom {
+    transform: scale(2, 2) translateY(-23px);
+    z-index: 1;
+  }
+
+  &__list-item-zoom--bottom-left {
+    transform: scale(2, 2) translateY(-23px) translateX(45px);
+    z-index: 1;
+  }
+
+  &__list-item-zoom--bottom-right {
+    transform: scale(2, 2) translateY(-23px) translateX(-45px);
+    z-index: 1;
+  }
+}

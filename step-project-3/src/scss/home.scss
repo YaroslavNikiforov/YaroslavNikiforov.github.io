@@ -1,0 +1,227 @@
+@import "mixin", "variables";
+
+body {
+  @include margin-padding-zero;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body *::selection {
+  background-color: $turquoise;
+  color: $white;
+}
+
+.home {
+  @include flex-box(initial, center, column);
+  background: url("/dist/img/home/bg1.jpg") no-repeat center;
+  background-size: cover;
+  height: 830px;
+
+  &__header {
+    height: 100px;
+    width: 100%;
+    background-color: rgba(73, 71, 63, 0.6);
+    @include flex-box(center, center, row);
+  }
+
+  &__header-wrapper {
+    @include flex-box(space-around, center, row);
+    width: 1160px;
+    height: 100%;
+  }
+
+  &__logo {
+    display: block;
+    user-select: none;
+  }
+
+  &__links-list {
+    @include flex-box(space-between, center, row);
+    @include margin-padding-zero;
+    list-style: none;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__list-item {
+    @include flex-box(center, center, row);
+    border-bottom: 2px solid transparent;
+    height: 100%;
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+      width: 25px;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: $grey;
+    text-decoration: none;
+    user-select: none;
+
+    &:hover {
+      color: $turquoise;
+      text-decoration: none;
+
+      .fa-search--list {
+        color: $turquoise;
+      }
+    }
+
+    &:focus {
+      outline: auto $turquoise;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 32px;
+    right: 0;
+    transform: scale(0, 0);
+    opacity: 0;
+    transition: transform 0.6s, opacity 0.6s;
+  }
+
+  &__input-field {
+    position: relative;
+    width: 100%;
+    background-color: $white;
+    border-radius: 5px;
+    border: 5px ridge $turquoise;
+    z-index: 1;
+    padding-left: 30px;
+    color: $dark-grey;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $grey;
+      font-weight: initial;
+    }
+  }
+
+  &__search-button {
+    @include flex-box(center, center, row);
+    position: absolute;
+    margin: 0;
+    left: 2px;
+    top: 3px;
+    z-index: 2;
+    height: 80%;
+    width: 30px;
+    padding-bottom: 2px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+
+      .fa-search--input {
+        text-shadow: 1px 1px 3px black;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .fa-search {
+    font-size: 20px;
+
+    &--list {
+      color: $grey;
+    }
+
+    &--input {
+      color: $turquoise;
+      text-shadow: 1px 1px 1px black;
+    }
+  }
+
+  .fa-times-circle {
+    color: $turquoise;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px black;
+    position: absolute;
+    font-size: 25px;
+    right: 10px;
+    top: 5.5px;
+    z-index: 2;
+
+    &:hover {
+      text-shadow: 1px 1px 3px black;
+    }
+
+    &:active {
+      transform: scale(0.9, 0.9);
+    }
+  }
+
+  &__container {
+    @include container;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  &__slogan {
+    @include margin-padding-zero;
+    color: $white;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 100px;
+  }
+
+  &__ham-definition {
+    @include margin-padding-zero;
+    color: $white;
+    font-size: 30px;
+    font-weight: 600;
+
+    span {
+      color: $turquoise;
+    }
+  }
+
+  &__advice {
+    @include margin-padding-zero;
+    color: $grey;
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  &__button--turquoise {
+    @include buttons($turquoise, 90px, 10px, 0, 0);
+
+    &:hover {
+      @include buttons-hover($turquoise);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px 4px $white;
+    }
+  }
+
+  &__button--blue {
+    @include buttons($blue, 90px, 0, 0, 10px);
+
+    &:hover {
+      @include buttons-hover($blue);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px 4px $white;
+    }
+  }
+}

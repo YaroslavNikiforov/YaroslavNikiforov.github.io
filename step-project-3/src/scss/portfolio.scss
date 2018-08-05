@@ -1,0 +1,27 @@
+@import "mixin", "variables";
+
+.portfolio {
+  background-color: black;
+  padding: 110px 30px 110px;
+
+  &__container {
+    @include container;
+    overflow: hidden;
+  }
+
+  &__grid-item {
+    position: relative;
+    border: 5px solid black;
+
+    &--size-1 {
+      width: 25%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    user-select: none;
+    display: block;
+  }
+}

@@ -1,0 +1,44 @@
+@import "mixin", "variables";
+
+.purchase {
+  background: url("/dist/img/purchase/bg2.jpg") no-repeat center;
+  background-size: cover;
+
+  &__wrapper {
+    @include flex-box(center, center, row);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.78);
+    padding: 130px 30px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    color: $turquoise;
+    font-size: 40px;
+    font-weight: 700;
+    @include margin-padding-zero
+  }
+
+  &__text {
+    color: #d8d8d8;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 40px;
+  }
+
+  &__button {
+    @include buttons($turquoise, 50px, 0, 0, 0);
+
+    &:hover {
+      @include buttons-hover($turquoise);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px 4px $white;
+    }
+  }
+}

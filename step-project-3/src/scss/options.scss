@@ -1,0 +1,79 @@
+@import "mixin", "variables";
+
+.options {
+  @include flex-box(initial, initial, row);
+
+  &__dark-block {
+    @include flex-box(center, center, column);
+    width: 25%;
+    padding: 105px 0;
+    border-top: 5px solid $turquoise;
+    background-color: $dark-blue;
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: inline-block;
+
+    &--image {
+      margin-bottom: 23px;
+      animation: clockwise-spin infinite 200s linear;
+      user-select: none;
+    }
+
+    &--link {
+      margin-top: 23px;
+      height: 30px;
+      width: 100%;
+
+      &:hover {
+        text-shadow: 1px 1px 8px $turquoise;
+      }
+    }
+  }
+
+  &__image {
+    height: 80px;
+    display: block;
+  }
+
+  &__link {
+    color: $turquoise;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    user-select: none;
+
+    &:hover {
+      text-shadow: 1px 1px 8px $turquoise;
+      color: $turquoise;
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: $turquoise auto;
+    }
+  }
+
+  &__turquoise-block {
+    @extend .options__dark-block;
+    border-top: 5px solid $white;
+    background-color: $turquoise;
+
+    .options__wrapper--image {
+      animation: counterclockwise-spin infinite 200s linear;
+    }
+
+    .options__link {
+      color: $white;
+
+      &:hover {
+        text-shadow: 1px 1px 8px $white;
+      }
+
+      &:focus {
+        outline: $white auto;
+      }
+    }
+  }
+}

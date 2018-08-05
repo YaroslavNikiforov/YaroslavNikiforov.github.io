@@ -1,0 +1,113 @@
+@import "mixin", "variables";
+
+.services {
+  padding: 80px 30px 110px;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__lines {
+    @include two-turquoise-lines;
+
+    &:hover {
+      @include two-turquoise-lines-hover;
+    }
+  }
+
+  &__tab {
+    @include flex-box(center, center, row);
+  }
+
+  &__button {
+    @include flex-box(center, center, initial);
+    position: relative;
+    width: 14%;
+    height: 72px;
+    flex-grow: 1;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: $dark-grey;
+    background-color: $light;
+    border: 1px solid $light-grey;
+    user-select: none;
+
+    &:hover {
+      background-color: darken($light, 2%);
+      border: 1px solid darken($light-grey, 2%);
+    }
+
+    &:focus {
+      outline: none;
+      text-shadow: 0 0 10px $turquoise
+    }
+  }
+
+  &__button-marker {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 15px;
+    height: 15px;
+    display: none;
+    background-color: $turquoise;
+    border-right: 1px solid $turquoise;
+    border-bottom: 1px solid $turquoise;
+    transform: rotate(45deg);
+  }
+
+  .services__button.services__button--active {
+    background-color: $turquoise;
+    border: 1px solid $turquoise;
+    color: $white;
+    outline: none;
+
+    .services__button-marker {
+      display: block;
+    }
+
+    &:focus {
+      text-shadow: 0 0 10px $white;
+    }
+  }
+
+  #web_design {
+    display: flex;
+  }
+
+  &__tab-content {
+    margin-top: 30px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__wrapper-image {
+    padding: 3px;
+    margin-right: 20px;
+    background: linear-gradient(180deg, $blue, $turquoise)
+  }
+
+  &__image {
+    display: block;
+    width: 194px;
+    height: 139px;
+    user-select: none;
+  }
+
+  &__description {
+    text-align: justify;
+    color: $dark-grey;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25px;
+    margin: 0;
+  }
+}
