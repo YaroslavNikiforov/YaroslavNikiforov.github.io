@@ -1,0 +1,54 @@
+.why {
+  padding: 100px 30px;
+  position: relative;
+  background-color: white;
+  z-index: 10;
+
+  &__container {
+    margin: auto;
+    max-width: 1160px;
+    text-align: center;
+  }
+
+  &__title {
+    color: #14afca;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-family: 'Open Sans', sans-serif;
+    color: #424f57;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+
+  &__equation {
+    color: #424f57;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 48px;
+    margin: 0 130px;
+  }
+
+  &__footer {
+    margin: 100px 0 0;
+  }
+
+  &__copyright {
+    font-family: 'Open Sans', sans-serif;
+    color: #3d3c3c;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    margin: 0;
+
+    span {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}

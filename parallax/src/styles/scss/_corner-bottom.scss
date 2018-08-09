@@ -1,0 +1,10 @@
+.corner-bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 100px solid transparent;
+  border-left: 49.4vw solid white;
+  border-right: 49.4vw solid white;
+  z-index: 10;
+}

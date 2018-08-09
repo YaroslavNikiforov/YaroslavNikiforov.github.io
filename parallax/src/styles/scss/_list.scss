@@ -1,0 +1,117 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 100px;
+  grid-column-gap: 70px;
+  user-select: none;
+
+  &__item {
+    height: 80px;
+
+    &:nth-child(1) {
+      .list__link:hover {
+        box-shadow: 0 0 12px 2px white;
+      }
+
+      .list__link:active {
+        box-shadow: 0 0 12px 6px white;
+      }
+    }
+
+    &:nth-child(2) {
+      .list__link:hover {
+        box-shadow: 0 0 12px 2px #82b541;
+      }
+
+      .list__link:active {
+        box-shadow: 0 0 12px 6px #82b541;
+      }
+    }
+
+    &:nth-child(3) {
+      .list__link:hover {
+        box-shadow: 0 0 12px 2px #db2176;
+      }
+
+      .list__link:active {
+        box-shadow: 0 0 12px 6px #db2176;
+      }
+    }
+
+    &:nth-child(4) {
+      .list__link:hover {
+        box-shadow: 0 0 12px 2px #016fb1;
+      }
+
+      .list__link:active {
+        box-shadow: 0 0 12px 6px #016fb1;
+      }
+    }
+
+    &:nth-child(5) {
+      .list__link:hover {
+        box-shadow: 0 0 12px 2px #e23237;
+      }
+
+      .list__link:active {
+        box-shadow: 0 0 12px 6px #e23237;
+      }
+    }
+
+    &:nth-child(6) {
+      .list__link:hover {
+        box-shadow: 0 0 12px 2px #247dee;
+      }
+
+      .list__link:active {
+        box-shadow: 0 0 12px 6px #247dee;
+      }
+    }
+
+    &:nth-child(7) {
+      .list__link:hover {
+        box-shadow: 0 0 12px 2px #de4c36;
+      }
+
+      .list__link:active {
+        box-shadow: 0 0 12px 6px #de4c36;
+      }
+    }
+
+    &:nth-child(8) {
+      .list__link:hover {
+        box-shadow: 0 0 12px 2px #45ad47;
+      }
+
+      .list__link:active {
+        box-shadow: 0 0 12px 6px #45ad47;
+      }
+    }
+  }
+
+  &__link {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    position: relative;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus {
+      outline: #14afca auto;
+    }
+  }
+
+  &__logo {
+    width: 80%;
+    height: auto;
+  }
+}

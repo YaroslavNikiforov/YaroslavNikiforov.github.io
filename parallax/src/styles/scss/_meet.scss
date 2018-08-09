@@ -1,0 +1,28 @@
+.meet {
+  padding: 100px 30px;
+  position: relative;
+  background-color: white;
+  z-index: 10;
+
+  &__container {
+    margin: auto;
+    max-width: 1160px;
+    text-align: center;
+  }
+
+  &__title {
+    color: #14afca;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-family: 'Open Sans', sans-serif;
+    color: #424f57;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+}
+

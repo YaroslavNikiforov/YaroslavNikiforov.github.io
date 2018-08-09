@@ -1,0 +1,96 @@
+.testimonials {
+  height: 825px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    transform-origin: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 110vh;
+    z-index: -3;
+    background: url("../../components/Testimonials/img/bg3.jpg") no-repeat center;
+    background-size: cover;
+    transform: translateZ(-2px) scale(3.1);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    transform-origin: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 110vh;
+    z-index: -2;
+    background: url("../../components/Companies/img/cross-stripes.png");
+    transform: translateZ(-2px) scale(3.1);
+  }
+
+  &__container {
+    max-width: 1160px;
+    margin: 0 30px;
+    text-align: center;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      transform-origin: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 110vh;
+      z-index: -1;
+      background: rgba(0, 0, 0, 0.7);
+      transform: translateZ(-2px) scale(3.1);
+    }
+  }
+
+  .testimonials__title {
+    color: #14afca;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 80px;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+
+  &__quote {
+    font-family: 'Open Sans', sans-serif;
+    color: #d3cccc;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 28px;
+  }
+
+  &__quote-author {
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 24px;
+    text-align: right;
+    padding-right: 100px;
+    display: block;
+  }
+}

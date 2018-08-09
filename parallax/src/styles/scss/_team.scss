@@ -1,0 +1,25 @@
+.team {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 90px;
+
+  &__member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__photo {
+    width: 75%;
+    height: auto;
+    user-select: none;
+  }
+
+  &__text {
+    margin: 30px 0 0;
+    color: #424f57;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}
