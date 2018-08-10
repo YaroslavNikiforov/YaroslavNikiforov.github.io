@@ -10,7 +10,7 @@ body {
 }
 
 .milan-holidays {
-    background: url("images/Layer 6.jpg") no-repeat center;
+    background: url("images/bg.jpg") no-repeat center;
     background-size: cover;
     height: 100vh;
     display: flex;
