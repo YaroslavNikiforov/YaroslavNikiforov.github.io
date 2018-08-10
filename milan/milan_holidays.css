@@ -1,0 +1,166 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.milan-holidays {
+    background: url("images/Layer 6.jpg") no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-milan {
+    width: 1100px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.p-milan-holidays {
+    color: white;
+    width: 170px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    text-align: left;
+}
+
+.p-milan-holidays span {
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 23px;
+    text-align: left;
+}
+
+.header-milan p img {
+    float: left;
+    margin-right: 10px;
+}
+
+.p-milan-contacts {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    width: 245px;
+    text-align: right;
+}
+
+.main-milan {
+    margin: auto;
+    width: 1100px;
+}
+
+.list-milan {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-milan li {
+    display: inline-block;
+    width: 312px;
+    height: 205px;
+    margin-bottom: 80px;
+    text-align: center;
+    padding: 2px;
+    background: linear-gradient(to bottom, white, black);
+    position: relative;
+}
+
+.link-main-milan {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    text-decoration: none;
+}
+
+.list-milan li:hover .link-main-milan {
+    color: #f46523;
+}
+
+.list-milan li img {
+    margin-bottom: 15px;
+    width: 312px;
+    height: 205px;
+}
+
+.copyrights-milan {
+    margin: auto;
+    cursor: pointer;
+}
+
+.p-copyrights-milan {
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+}
+
+.orange-block {
+    width: 282px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: #f46523;
+    padding: 16px 15px;
+    position: absolute;
+    bottom: 2px;
+    visibility: hidden;
+}
+
+.list-milan li:hover .orange-block {
+    visibility: visible;
+}
+
+.price {
+    text-align: left;
+}
+
+.from {
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 21px;
+    margin: 0;
+}
+
+.€50 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 21px;
+    margin: 0;
+}
+
+.link-view-details {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-decoration: none;
+}
+
+.link-view-details:hover {
+    opacity: 0.7;
+}
+
+.orange-block a i {
+    color: white;
+}
