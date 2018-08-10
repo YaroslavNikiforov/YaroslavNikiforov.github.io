@@ -122,11 +122,13 @@ body {
     padding: 16px 15px;
     position: absolute;
     bottom: 2px;
-    visibility: hidden;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 0.5s;
 }
 
 .list-milan li:hover .orange-block {
-    visibility: visible;
+    transform: scaleY(1);
 }
 
 .price {
