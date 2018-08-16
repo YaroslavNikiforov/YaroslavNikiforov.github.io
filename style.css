@@ -58,7 +58,7 @@ h1 {
     position: relative;
     height: 343px;
     cursor: pointer;
-    transition: 1s;
+    transition: 0.5s;
     perspective: 1000px;
     border-radius: 10px;
 }
@@ -96,7 +96,7 @@ h1 {
     height: 100%;
     left: 0;
     top: 0;
-    transition: all 1s;
+    transition: transform 1s;
     backface-visibility: hidden;
     transform-style: preserve-3d;
     transform-origin: center;
