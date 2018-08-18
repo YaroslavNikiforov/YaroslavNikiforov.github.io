@@ -4,7 +4,7 @@ const menuButton = document.querySelector('.header__menu-btn');
 const menu = document.querySelector('.header__list');
 let homeLink = document.querySelector('.header__list-item:nth-of-type(1) .header__link');
 
-menuButton.onmouseover = function () {
+/*menuButton.onmouseover = function () {
     menu.style.display = 'flex';
     menuButton.classList.add('header__menu-btn--active');
     setTimeout(function () {
@@ -23,9 +23,9 @@ menu.onmouseleave = function (event) {
         }, 300);
         menuButton.classList.remove('header__menu-btn--active');
     }
-};
+};*/
 
-/*$(document).ready(function () {
+$(document).ready(function () {
     $(menuButton).hover(function () {
         menu.style.display = 'flex';
         menuButton.classList.add('header__menu-btn--active');
@@ -42,7 +42,7 @@ menu.onmouseleave = function (event) {
             }, 300);
             menuButton.classList.remove('header__menu-btn--active');
     });
-});*/
+});
 
 window.addEventListener('resize', function (event) {
     if (window.innerWidth > 480) {
