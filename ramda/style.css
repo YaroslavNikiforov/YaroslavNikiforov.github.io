@@ -139,15 +139,17 @@ html, body {
 }
 
 .menu-btn-active span {
-    background-color: #36444f;
+    visibility: hidden;
 }
 
 .menu-btn-active span::before {
     transform: rotate(45deg);
+    visibility: visible;
 }
 
 .menu-btn-active span::after {
     transform: rotate(-45deg);
+    visibility: visible;
 }
 
 .main {
