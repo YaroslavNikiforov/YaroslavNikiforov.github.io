@@ -43,8 +43,8 @@ h1 {
 .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 343px auto 343px;
-    grid-column-gap: 3%;
+    grid-template-rows: 200px 200px 200px;
+    grid-column-gap: 5%;
     grid-row-gap: 70px;
     margin: 100px auto 0;
     width: 90%;
@@ -61,6 +61,7 @@ h1 {
     transition: 0.5s;
     perspective: 1000px;
     border-radius: 10px;
+    height: 100%;
 }
 
 .card:focus {
@@ -83,6 +84,22 @@ h1 {
     box-shadow: 0 0 20px 4px #ffc107;
 }
 
+.card:nth-child(5):hover {
+    box-shadow: 0 0 20px 4px #0d7fbe;
+}
+
+.card:nth-child(6):hover {
+    box-shadow: 0 0 20px 4px #8ac42d;
+}
+
+.card:nth-child(7):hover {
+    box-shadow: 0 0 20px 4px #45b17f;
+}
+
+.card:nth-child(8):hover {
+    box-shadow: 0 0 20px 4px #f46523;
+}
+
 .card:nth-child(9):hover {
     box-shadow: 0 0 20px 4px #3ab4a7;
 }
@@ -92,18 +109,20 @@ h1 {
 }
 
 .card:nth-child(11):hover {
-    box-shadow: 0 0 20px 4px #4dc9fb;;
+    box-shadow: 0 0 20px 4px #4dc9fb;
 }
 
+.card:nth-child(12):hover {
+    box-shadow: 0 0 20px 4px #d32774;
+}
 
-
-.card:hover .front {
+/*.card:hover .front {
     transform: rotateY(180deg);
 }
 
 .card:hover .back {
     transform: rotateY(360deg);
-}
+}*/
 
 .front,
 .back {
@@ -117,16 +136,42 @@ h1 {
     transform-style: preserve-3d;
     transform-origin: center;
     border-radius: 10px;
+    background-color: white;
     overflow: hidden;
 }
 
-.back {
-    background-color: white;
-    transform: rotateY(180deg);
+.front {
+    display: flex;
+    align-items: center;
 }
 
-.description {
+.back {
+    transform: rotateY(180deg);
+    padding-left: 20px;
+}
+
+.back-title {
     color: black;
+    font-size: 27px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.back-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.back-list-item {
+    font-size: 15px;
+    color: black;
+}
+
+.back-list-item::before {
+    content: '\2736';
+    margin-right: 5px;
 }
 
 .site-image {
