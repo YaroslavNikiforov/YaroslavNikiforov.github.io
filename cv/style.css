@@ -18,7 +18,10 @@ body *::selection {
 
 section {
     height: 131vw;
-    display: flex;
+    display: grid;
+    grid-template-columns: 34% 64%;
+    grid-gap: 2%;
+    background: url("images/stardust-white.png") center;
 }
 
 .left-block,
@@ -29,29 +32,26 @@ section {
 }
 
 .left-block {
-    width: 35%;
     background: black url("images/stardust-black.png") center;
 }
 
 .right-block {
-    width: 65%;
+    align-items: flex-end;
 }
 
 .content-left {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25%;
     overflow: hidden;
     position: relative;
+    padding: 2vw 0 3vw;
+    flex-grow: 1;
+    height: 25%;
 }
 
 .content-left:nth-child(1) {
     height: 20%;
-}
-
-.content-left:nth-child(2) {
-    height: 30%;
 }
 
 .content-left:not(:last-child)::before {
@@ -92,8 +92,8 @@ section {
     position: absolute;
     top: 50%;
     transform: translateY(-55%);
-    border: 1vw solid white;
-    padding: 1vw;
+    border: 0.9vw solid white;
+    padding: 0.9vw;
     border-radius: 50%;
     height: 20vw;
     width: 20vw;
@@ -110,42 +110,64 @@ section {
 .title {
     font-family: 'Lato', sans-serif;
     letter-spacing: 2px;
-    color: white;
     text-align: center;
-    font-size: 2.5vw;
+    font-size: 2vw;
     margin: 0 0 2vw 2vw;
     position: relative;
+}
+
+.title-black {
+    color: white;
+}
+
+.title-white {
+    color: black;
 }
 
 .title i {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background: white;
-    color: black;
     border-radius: 50%;
-    height: 5vw;
-    width: 5vw;
+    height: 3.8vw;
+    width: 3.8vw;
     margin-right: 1vw;
     letter-spacing: 0;
+}
+
+.title-black i {
+    color: black;
+    background: white;
+}
+
+.title-white i {
+    color: white;
+    background: black;
 }
 
 .title::after {
     content: '';
     display: block;
-    height: 0.5vw;
+    height: 0.4vw;
     width: 5vw;
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.title-black::after {
     background-color: white;
+}
+
+.title-white::after {
+    background-color: black;
 }
 
 .summary {
     color: white;
     margin: 0;
     text-align: justify;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 300;
     line-height: 1.3;
 }
@@ -158,7 +180,7 @@ section {
     color: white;
     margin: 0 0 1vw;
     align-self: flex-start;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 300;
 }
 
@@ -170,8 +192,8 @@ section {
     color: black;
     border-radius: 50%;
     font-size: 1.5vw;
-    height: 3vw;
-    width: 3vw;
+    height: 2.7vw;
+    width: 2.7vw;
     margin-right: 1vw;
 }
 
@@ -187,7 +209,7 @@ section {
 .technology-name {
     color: white;
     margin: 0;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 300;
     line-height: 1;
 }
@@ -195,8 +217,8 @@ section {
 .level {
     display: flex;
     border: 0.2vw solid white;
-    width: 60%;
-    height: 70%;
+    width: 65%;
+    height: 50%;
     border-radius: 20px;
     background-color: white;
 }
@@ -218,19 +240,19 @@ section {
 }
 
 .technology:nth-of-type(1) .scale-white {
-    width: 93%;
-}
-
-.technology:nth-of-type(1) .scale-black {
-    width: 7%;
-}
-
-.technology:nth-of-type(2) .scale-white {
     width: 75%;
 }
 
-.technology:nth-of-type(2) .scale-black {
+.technology:nth-of-type(1) .scale-black {
     width: 25%;
+}
+
+.technology:nth-of-type(2) .scale-white {
+    width: 93%;
+}
+
+.technology:nth-of-type(2) .scale-black {
+    width: 7%;
 }
 
 .technology:nth-of-type(3) .scale-white {
@@ -257,17 +279,21 @@ section {
     width: 40%;
 }
 
-.right-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
 .content-right {
     position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3vw 0 2vw;
 }
 
-.content-right::before {
+.content-right:not(:first-child) {
+    background-color: white;
+}
+
+.content-right:not(:last-child)::before {
     content: '';
     display: block;
     background-color: black;
@@ -278,9 +304,10 @@ section {
     left: 0;
     transform: rotate(4deg);
     transform-origin: left;
+    z-index: 1;
 }
 
-.content-right::after {
+.content-right:not(:last-child)::after {
     content: '';
     display: block;
     background-color: black;
@@ -291,17 +318,7 @@ section {
     right: 0;
     transform: rotate(-4deg);
     transform-origin: right;
-}
-
-.personal {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 17vw;
-    padding-left: 2vw;
-    background: url("images/stardust-white.png") center;
+    z-index: 1;
 }
 
 .name {
@@ -309,9 +326,7 @@ section {
     margin: 0;
     text-align: left;
     color: black;
-    font-size: 5.5vw;
-    font-weight: 900;
-
+    font-size: 5.8vw;
 }
 
 .position {
@@ -319,8 +334,46 @@ section {
     text-align: left;
     color: black;
     font-size: 2vw;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2vw;
+}
+
+.project-description {
+    margin: 0;
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+
+.project-description span {
     font-weight: 700;
 }
+
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 2vw;
+}
+
+.education {
+}
+
+.education-text {
+    margin: 0;
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+
+.education-text:first-child {
+    font-weight: 700;
+}
+
+
+
 
 
 
