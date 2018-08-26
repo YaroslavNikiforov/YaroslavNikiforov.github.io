@@ -11,17 +11,12 @@ a, img, i, button {
     box-sizing: border-box;
 }
 
-body *::selection {
-    background-color: white;
-    color: black;
-}
-
 section {
     height: 131vw;
     display: grid;
     grid-template-columns: 34% 64%;
     grid-gap: 2%;
-    background: url("images/stardust-white.png") center;
+    background: url("images/stardust.png") center;
 }
 
 .left-block,
@@ -32,11 +27,21 @@ section {
 }
 
 .left-block {
-    background: black url("images/stardust-black.png") center;
+    background: black url("images/stardust.png") center;
+}
+
+.left-block *::selection {
+    background-color: deeppink;
+    color: black;
 }
 
 .right-block {
     align-items: flex-end;
+}
+
+.right-block *::selection {
+    background-color: #f50a73;
+    color: white;
 }
 
 .content-left {
@@ -61,7 +66,7 @@ section {
     height: 2px;
     width: 50.5%;
     position: absolute;
-    bottom:0;
+    bottom: 0;
     left: 0;
     transform: rotate(-5deg);
     transform-origin: left;
@@ -74,7 +79,7 @@ section {
     height: 2px;
     width: 50.5%;
     position: absolute;
-    bottom:0;
+    bottom: 0;
     right: 0;
     transform: rotate(5deg);
     transform-origin: right;
@@ -94,6 +99,7 @@ section {
     transform: translateY(-55%);
     border: 0.9vw solid white;
     padding: 0.9vw;
+    background-color: black;
     border-radius: 50%;
     height: 20vw;
     width: 20vw;
@@ -118,10 +124,12 @@ section {
 
 .title-black {
     color: white;
+    background-color: black;
 }
 
 .title-white {
     color: black;
+    background-color: white;
 }
 
 .title i {
@@ -165,6 +173,7 @@ section {
 
 .summary {
     color: white;
+    background-color: black;
     margin: 0;
     text-align: justify;
     font-size: 1.5vw;
@@ -182,6 +191,7 @@ section {
     align-self: flex-start;
     font-size: 1.5vw;
     font-weight: 300;
+    background-color: black;
 }
 
 .contact i {
@@ -204,6 +214,7 @@ section {
     width: 100%;
     height: 3vw;
     margin-bottom: 1vw;
+    background-color: black;
 }
 
 .technology-name {
@@ -289,10 +300,6 @@ section {
     padding: 3vw 0 2vw;
 }
 
-.content-right:not(:first-child) {
-    background-color: white;
-}
-
 .content-right:not(:last-child)::before {
     content: '';
     display: block;
@@ -300,7 +307,7 @@ section {
     height: 2px;
     width: 50.5%;
     position: absolute;
-    bottom:0;
+    bottom: 0;
     left: 0;
     transform: rotate(4deg);
     transform-origin: left;
@@ -314,7 +321,7 @@ section {
     height: 2px;
     width: 50.5%;
     position: absolute;
-    bottom:0;
+    bottom: 0;
     right: 0;
     transform: rotate(-4deg);
     transform-origin: right;
@@ -327,6 +334,7 @@ section {
     text-align: left;
     color: black;
     font-size: 5.8vw;
+    background-color: white;
 }
 
 .position {
@@ -334,12 +342,17 @@ section {
     text-align: left;
     color: black;
     font-size: 2vw;
+    background-color: white;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2vw;
+}
+
+.project {
+    background-color: white;
 }
 
 .project-description {
@@ -360,6 +373,7 @@ section {
 }
 
 .education {
+    background-color: white;
 }
 
 .education-text {
@@ -372,9 +386,31 @@ section {
     font-weight: 700;
 }
 
+.qualities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10vw;
+    grid-row-gap: 2vw;
+    margin: auto;
+}
 
+.quality {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    background: white;
+    margin: 0;
+    font-size: 1.5vw;
+    font-weight: 700;
+}
 
+.quality-text {
+    margin: 0;
+}
 
-
-
+.quality-icon {
+    height: 2.7vw;
+    width: auto;
+    margin-right: 1vw;
+}
 
