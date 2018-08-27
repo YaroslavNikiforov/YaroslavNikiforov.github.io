@@ -1,6 +1,10 @@
 body {
     margin: 0;
     font-family: 'Jockey One', sans-serif;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    height: 100vh;
+    overflow: hidden;
 }
 
 a, img, button {
@@ -16,14 +20,59 @@ body *::selection {
     color: black;
 }
 
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: black;
+    z-index: 100;
+    overflow: hidden;
+    transition: all 1s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.loader {
+    box-sizing: border-box;
+    height: 100px;
+    width: 100px;
+    border: 10px solid white;
+    border-radius: 50%;
+    border-top-color: #800020;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: 2s spin infinite linear;
+}
+
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+
+}
+
 .section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
     background-color: black;
-    padding: 7vw 0 15vw;
+    padding: 7vw 0 7vw;
     position: relative;
+    z-index: 1;
 }
 
 .container {
@@ -32,10 +81,9 @@ body *::selection {
     grid-template-rows: repeat(3, 200px);
     grid-gap: 5vw;
     width: 70%;
-    min-width: 320px;
     border: 1px solid white;
     position: relative;
-    z-index: 10;
+    z-index: 3;
 }
 
 .particles-js-canvas-el {
@@ -44,33 +92,8 @@ body *::selection {
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 5;
-}
-
-.fire {
-    position: absolute;
-    width: 33.5%;
-}
-
-.fire:nth-of-type(1) {
-    bottom: 0;
-    left: -1px;
     z-index: 2;
 }
-
-.fire:nth-of-type(2) {
-    bottom: 0;
-    left: 0;
-    transform: translateX(99.5%);
-    z-index: 1;
-}
-
-.fire:nth-of-type(3) {
-    bottom: 0;
-    right: 0;
-    z-index: 0;
-}
-
 
 .card {
     display: flex;
@@ -78,11 +101,9 @@ body *::selection {
     justify-content: flex-start;
     position: relative;
     cursor: pointer;
-    transition: 0.5s;
     perspective: 1000px;
-    border-radius: 10px;
-    height: 100%;
     background: black;
+    box-shadow: 0 0 10px white;
 }
 
 .card:focus {
@@ -90,16 +111,16 @@ body *::selection {
 }
 
 .card:hover {
-    box-shadow: 0 0 20px 4px white;
+    box-shadow: 0 0 20px white;
 }
 
-.card:hover .front {
+/*.card:hover .front {
     transform: rotateY(180deg);
 }
 
 .card:hover .back {
     transform: rotateY(360deg);
-}
+}*/
 
 .front,
 .back {
@@ -108,18 +129,76 @@ body *::selection {
     height: 100%;
     left: 0;
     top: 0;
-    transition: transform 1.5s;
     backface-visibility: hidden;
     transform-style: preserve-3d;
     transform-origin: center;
-    border-radius: 10px;
-    overflow: hidden;
 }
 
 .front {
-    box-shadow: 0 0 5px 1px white;
-    display: flex;
-    align-items: center;
+    background: no-repeat top;
+    background-size: cover;
+}
+
+.card:nth-of-type(1) .front {
+    background-image: url("images/theham.jpg");
+    transition: 7s;
+}
+
+.card:nth-of-type(2) .front {
+    background-image: url("images/forkio.jpg");
+    transition: 5s;
+}
+
+.card:nth-of-type(3) .front {
+    background-image: url("images/parallax.jpg");
+    transition: 5s;
+}
+
+.card:nth-of-type(4) .front {
+    background-image: url("images/landing.jpg");
+    transition: 9s;
+}
+
+.card:nth-of-type(5) .front {
+    background-image: url("images/mondrian.jpg");
+}
+
+.card:nth-of-type(6) .front {
+    background-image: url("images/pricing.jpg");
+}
+
+.card:nth-of-type(7) .front {
+    background-image: url("images/journey.jpg");
+}
+
+.card:nth-of-type(8) .front {
+    background-image: url("images/milan.jpg");
+}
+
+.card:nth-of-type(9) .front {
+    background-image: url("images/fixed.jpg");
+    transition: 4s;
+}
+
+.card:nth-of-type(10) .front {
+    background-image: url("images/firstpage.jpg");
+    transition: 7s;
+}
+
+.card:nth-of-type(11) .front {
+    background-image: url("images/ramda.jpg");
+    transition: 4s;
+}
+
+.card:nth-of-type(12) .front {
+    background-image: url("images/myinstagram.jpg");
+    transition: 1s;
+}
+
+
+
+.front:hover {
+    background-position: bottom;
 }
 
 .back {
@@ -132,7 +211,6 @@ body *::selection {
 .site-image {
     width: 100%;
     height: auto;
-    border-radius: 10px;
 }
 
 @media only screen and (max-width: 993px) {
@@ -149,10 +227,11 @@ body *::selection {
     }
 }
 
-@media only screen and (max-width: 481px) {
+@media only screen and (max-width: 400px) {
     .container {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(12, 200px);
+        grid-gap: 8vw;
     }
 }
 

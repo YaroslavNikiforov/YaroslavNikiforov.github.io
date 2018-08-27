@@ -8,7 +8,7 @@
       }
     },
     "color": {
-      "value": "#fb6605"
+      "value": "#ffffff"
     },
     "shape": {
       "type": "circle",
@@ -30,7 +30,7 @@
       "random": true,
       "anim": {
         "enable": true,
-        "speed": 2,
+        "speed": 1,
         "opacity_min": 0.1,
         "sync": false
       }
@@ -40,7 +40,7 @@
       "random": true,
       "anim": {
         "enable": true,
-        "speed": 10,
+        "speed": 1,
         "size_min": 0.1,
         "sync": false
       }
@@ -54,8 +54,8 @@
     },
     "move": {
       "enable": true,
-      "speed": 4,
-      "direction": "top",
+      "speed": 1,
+      "direction": "bottom",
       "random": true,
       "straight": false,
       "out_mode": "out",
@@ -88,16 +88,16 @@
       },
       "bubble": {
         "distance": 400,
-        "size": 40,
+        "size": 10,
         "duration": 2,
         "opacity": 8,
-        "speed": 3
+        "speed": 10
       },
       "repulse": {
         "distance": 200
       },
       "push": {
-        "particles_nb": 4
+        "particles_nb": 20
       },
       "remove": {
         "particles_nb": 2
