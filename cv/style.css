@@ -12,7 +12,7 @@ a, img, i, button {
 }
 
 section {
-    height: 298mm;
+    height: 131vw;
     display: grid;
     grid-template-columns: 34% 64%;
     grid-gap: 2%;
