@@ -3,8 +3,6 @@ body {
     font-family: 'Jockey One', sans-serif;
     perspective: 1000px;
     transform-style: preserve-3d;
-    height: 100vh;
-    overflow: hidden;
 }
 
 a, img, button {
@@ -24,7 +22,7 @@ body *::selection {
     position: fixed;
     left: 0;
     top: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background: black;
     z-index: 100;
@@ -43,7 +41,7 @@ body *::selection {
     border-top-color: #800020;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 50vh;
     transform: translate(-50%, -50%);
     animation: 2s spin infinite linear;
 }
@@ -81,7 +79,6 @@ body *::selection {
     grid-template-rows: repeat(3, 200px);
     grid-gap: 5vw;
     width: 70%;
-    border: 1px solid white;
     position: relative;
     z-index: 3;
 }
@@ -155,44 +152,44 @@ body *::selection {
 }
 
 .card:nth-of-type(4) .front {
+    background-image: url("images/myinstagram.jpg");
+    transition: 1s;
+}
+
+.card:nth-of-type(5) .front {
     background-image: url("images/landing.jpg");
     transition: 9s;
 }
 
-.card:nth-of-type(5) .front {
-    background-image: url("images/mondrian.jpg");
-}
-
 .card:nth-of-type(6) .front {
-    background-image: url("images/pricing.jpg");
-}
-
-.card:nth-of-type(7) .front {
-    background-image: url("images/journey.jpg");
-}
-
-.card:nth-of-type(8) .front {
-    background-image: url("images/milan.jpg");
-}
-
-.card:nth-of-type(9) .front {
-    background-image: url("images/fixed.jpg");
-    transition: 4s;
-}
-
-.card:nth-of-type(10) .front {
-    background-image: url("images/firstpage.jpg");
-    transition: 7s;
-}
-
-.card:nth-of-type(11) .front {
     background-image: url("images/ramda.jpg");
     transition: 4s;
 }
 
+.card:nth-of-type(7) .front {
+    background-image: url("images/firstpage.jpg");
+    transition: 7s;
+}
+
+.card:nth-of-type(8) .front {
+    background-image: url("images/fixed.jpg");
+    transition: 4s;;
+}
+
+.card:nth-of-type(9) .front {
+    background-image: url("images/journey.jpg");
+}
+
+.card:nth-of-type(10) .front {
+    background-image: url("images/milan.jpg");
+}
+
+.card:nth-of-type(11) .front {
+    background-image: url("images/pricing.jpg");
+}
+
 .card:nth-of-type(12) .front {
-    background-image: url("images/myinstagram.jpg");
-    transition: 1s;
+    background-image: url("images/mondrian.jpg");
 }
 
 
