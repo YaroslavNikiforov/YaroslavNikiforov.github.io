@@ -12,7 +12,7 @@ a, img, i, button {
 }
 
 section {
-    height: 131vw;
+    height: 140vw;
     display: grid;
     grid-template-columns: 34% 64%;
     grid-gap: 2%;
@@ -259,11 +259,11 @@ section {
 }
 
 .technology:nth-of-type(2) .scale-white {
-    width: 93%;
+    width: 97%;
 }
 
 .technology:nth-of-type(2) .scale-black {
-    width: 7%;
+    width: 3%;
 }
 
 .technology:nth-of-type(3) .scale-white {
@@ -298,6 +298,7 @@ section {
     justify-content: center;
     align-items: flex-start;
     padding: 3vw 0 2vw;
+    flex-grow: 1;
 }
 
 .content-right:not(:last-child)::before {
@@ -391,7 +392,7 @@ section {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10vw;
     grid-row-gap: 2vw;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .quality {
