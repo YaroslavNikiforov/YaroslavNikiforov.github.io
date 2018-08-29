@@ -13,6 +13,48 @@ body *::selection {
   color: white;
 }
 
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  z-index: 100;
+  overflow: hidden;
+  transition: all 1s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader {
+  box-sizing: border-box;
+  height: 100px;
+  width: 100px;
+  border: 10px solid white;
+  border-radius: 50%;
+  border-top-color: #8e82ad;
+  position: absolute;
+  left: 50%;
+  top: 50vh;
+  margin-left: -50px;
+  margin-top: -50px;
+  animation: 2s spin infinite linear;
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .home {
   display: flex;
   justify-content: flex-start;

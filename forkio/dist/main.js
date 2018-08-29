@@ -128,7 +128,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ \"./src/javascript/header.js\");\n/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carousel */ \"./src/javascript/carousel.js\");\n/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_carousel__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\n\n//# sourceURL=webpack:///./src/javascript/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ \"./src/javascript/header.js\");\n/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carousel */ \"./src/javascript/carousel.js\");\n/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_carousel__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _preloader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./preloader */ \"./src/javascript/preloader.js\");\n/* harmony import */ var _preloader__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_preloader__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/javascript/index.js?");
+
+/***/ }),
+
+/***/ "./src/javascript/preloader.js":
+/*!*************************************!*\
+  !*** ./src/javascript/preloader.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("document.body.onload = function () {\r\n\r\n    setTimeout(function () {\r\n        let preloader = document.querySelector('.preloader');\r\n\r\n        if (!preloader.classList.contains('loaded')) {\r\n            preloader.classList.add('loaded');\r\n        }\r\n\r\n    }, 1000);\r\n};\n\n//# sourceURL=webpack:///./src/javascript/preloader.js?");
 
 /***/ })
 
