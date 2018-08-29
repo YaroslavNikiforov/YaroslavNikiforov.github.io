@@ -10,6 +10,48 @@ body *::selection {
   color: $white;
 }
 
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: $turquoise;
+  z-index: 100;
+  overflow: hidden;
+  transition: all 1s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader {
+  box-sizing: border-box;
+  height: 100px;
+  width: 100px;
+  border: 10px solid white;
+  border-radius: 50%;
+  border-top-color: $blue;
+  position: absolute;
+  left: 50%;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  animation: 2s spin infinite linear;
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 .home {
   @include flex-box(initial, center, column);
   background: url("../img/home/bg1.jpg") no-repeat center;
