@@ -7,8 +7,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Jockey One', sans-serif;
-    perspective: 1000px;
-    transform-style: preserve-3d;
 }
 
 a, img, button {
@@ -102,16 +100,7 @@ body *::selection {
     z-index: 1;
     min-height: 100vh;
     height: 100%;
-    padding: 100px 0;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 200px);
-    grid-gap: 5vw;
-    width: 70%;
-    z-index: 3;
+    overflow: hidden;
 }
 
 .particles-js-canvas-el {
@@ -123,141 +112,395 @@ body *::selection {
     z-index: 2;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.container {
+    width: 300px;
+    height: 300px;
+    z-index: 3;
     position: relative;
+    perspective: 500px;
+}
+
+.key {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    fill: white;
     cursor: pointer;
-    perspective: 1000px;
-    background: black;
-    box-shadow: 0 0 10px white;
+}
+
+.key:hover {
+    fill: whitesmoke;
+}
+
+.key:active {
+    height: 48px;
+    width: 48px;
+}
+
+.key-left {
+    top: 50%;
+    margin-top: -25px;
+    left: -250px;
+}
+
+.key-right {
+    top: 50%;
+    margin-top: -25px;
+    right: -250px;
+}
+
+.key-up {
+    left: 50%;
+    margin-left: -25px;
+    top: -200px;
+}
+
+.key-down {
+    left: 50%;
+    margin-left: -25px;
+    bottom: -200px;
+}
+
+.cube {
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.side {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    box-shadow: 0 0 20px white;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.front {
+    transform: translateZ(150px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(150px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+.card {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background: no-repeat top;
+    background-size: cover;
+}
+
+.side:nth-of-type(1) .card {
+    background-image: url("images/theham.jpg");
+    transition: 7s;
+}
+
+.side:nth-of-type(2) .card {
+    background-image: url("images/landing.jpg");
+    transition: 9s;
+}
+
+.side:nth-of-type(3) .card {
+    background-image: url("images/forkio.jpg");
+    transition: 5s;
+}
+
+.side:nth-of-type(4) .card {
+    background-image: url("images/parallax.jpg");
+    transition: 5s;
+}
+
+.side:nth-of-type(5) .card {
+    background-image: url("images/instagram.jpg");
+    transition: 2s;
+}
+
+.side:nth-of-type(6) .card {
+    background-image: url("images/ramda.png");
+    transition: 4s;
+}
+
+.card:hover {
+    background-position: bottom;
 }
 
 .card:focus {
     outline: none;
 }
 
-.card:hover {
-    box-shadow: 0 0 20px white;
-}
 
-/*.card:hover .front {
-    transform: rotateY(180deg);
-}
-
-.card:hover .back {
-    transform: rotateY(360deg);
-}*/
-
-.front,
-.back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transform-origin: center;
-}
-
-.front {
-    background: no-repeat top;
-    background-size: cover;
-}
-
-.card:nth-of-type(1) .front {
-    background-image: url("images/theham.jpg");
-    transition: 7s;
-}
-
-.card:nth-of-type(2) .front {
-    background-image: url("images/forkio.jpg");
-    transition: 5s;
-}
-
-.card:nth-of-type(3) .front {
-    background-image: url("images/parallax.jpg");
-    transition: 5s;
-}
-
-.card:nth-of-type(4) .front {
-    background-image: url("images/myinstagram.jpg");
-    transition: 1s;
-}
-
-.card:nth-of-type(5) .front {
-    background-image: url("images/landing.jpg");
-    transition: 9s;
-}
-
-.card:nth-of-type(6) .front {
-    background-image: url("images/ramda.jpg");
-    transition: 4s;
-}
-
-.card:nth-of-type(7) .front {
-    background-image: url("images/firstpage.jpg");
-    transition: 7s;
-}
-
-.card:nth-of-type(8) .front {
-    background-image: url("images/fixed.jpg");
-    transition: 4s;;
-}
-
-.card:nth-of-type(9) .front {
-    background-image: url("images/journey.jpg");
-}
-
-.card:nth-of-type(10) .front {
-    background-image: url("images/milan.jpg");
-}
-
-.card:nth-of-type(11) .front {
-    background-image: url("images/pricing.jpg");
-}
-
-.card:nth-of-type(12) .front {
-    background-image: url("images/mondrian.jpg");
-}
-
-.front:hover {
-    background-position: bottom;
-}
-
-.back {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    transform: rotateY(180deg);
-}
-
-.site-image {
-    width: 100%;
-    height: auto;
-}
-
-@media only screen and (max-width: 993px) {
+@media only screen and (max-width: 900px) {
     .container {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 200px);
+        width: 250px;
+        height: 250px;
+    }
+
+    .front {
+        transform: translateZ(125px);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(125px);
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ(125px);
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ(125px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(125px);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(125px);
+    }
+
+    .key-left {
+        left: -200px;
+    }
+
+    .key-right {
+        right: -200px;
+    }
+
+    .key-up {
+        top: -180px;
+    }
+
+    .key-down {
+        bottom: -180px;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 700px) {
     .container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 200px);
+        width: 200px;
+        height: 200px;
+    }
+
+    .front {
+        transform: translateZ(100px);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(100px);
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+
+    .key-left {
+        left: -150px;
+    }
+
+    .key-right {
+        right: -150px;
+    }
+
+    .key-up {
+        top: -150px;
+    }
+
+    .key-down {
+        bottom: -150px;
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 530px) {
     .container {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(12, 200px);
-        grid-gap: 8vw;
+        width: 180px;
+        height: 180px;
+    }
+
+    .front {
+        transform: translateZ(90px);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(90px);
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ(90px);
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ(90px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(90px);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(90px);
+    }
+
+    .key-left {
+        left: -130px;
+    }
+
+    .key-right {
+        right: -130px;
+    }
+
+    .key-up {
+        top: -130px;
+    }
+
+    .key-down {
+        bottom: -130px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .front {
+        transform: translateZ(75px);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(75px);
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ(75px);
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ(75px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(75px);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(75px);
+    }
+
+    .key {
+        height: 40px;
+        width: 40px;
+    }
+
+    .key:active {
+        height: 38px;
+        width: 38px;
+    }
+
+    .key-left {
+        left: -100px;
+    }
+
+    .key-right {
+        right: -100px;
+    }
+
+    .key-up {
+        top: -100px;
+    }
+
+    .key-down {
+        bottom: -100px;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .container {
+        width: 130px;
+        height: 130px;
+    }
+
+    .front {
+        transform: translateZ(65px);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(65px);
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ(65px);
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ(65px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(65px);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(65px);
+    }
+
+    .key {
+        height: 35px;
+        width: 35px;
+    }
+
+    .key:active {
+        height: 33px;
+        width: 33px;
+    }
+
+    .key-left {
+        left: -90px;
+    }
+
+    .key-right {
+        right: -90px;
+    }
+
+    .key-up {
+        top: -90px;
+    }
+
+    .key-down {
+        bottom: -90px;
     }
 }
 
