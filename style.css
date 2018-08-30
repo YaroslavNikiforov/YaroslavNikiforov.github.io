@@ -173,7 +173,6 @@ body *::selection {
     width: inherit;
     height: inherit;
     box-shadow: 0 0 20px white;
-    border-radius: 5px;
     backface-visibility: hidden;
 }
 
