@@ -117,7 +117,7 @@ body *::selection {
     height: 300px;
     z-index: 3;
     position: relative;
-    perspective: 500px;
+    perspective: 1000px;
 }
 
 .key {
