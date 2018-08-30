@@ -139,25 +139,25 @@ body *::selection {
 
 .key-left {
     top: 50%;
-    margin-top: -25px;
+    transform: translateY(-50%);
     left: -250px;
 }
 
 .key-right {
     top: 50%;
-    margin-top: -25px;
+    transform: translateY(-50%);
     right: -250px;
 }
 
 .key-up {
     left: 50%;
-    margin-left: -25px;
+    transform: translateX(-50%);
     top: -200px;
 }
 
 .key-down {
     left: 50%;
-    margin-left: -25px;
+    transform: translateX(-50%);
     bottom: -200px;
 }
 
