@@ -112,6 +112,26 @@ body *::selection {
     z-index: 2;
 }
 
+.keys-tip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s;
+    animation: flicker 0.1s infinite alternate;
+}
+
+@keyframes flicker {
+    from {
+        transform: scale(0.97, 0.97);
+    }
+    to {
+        transform: scale(1, 1);
+    }
+}
+
 .container {
     width: 300px;
     height: 300px;
@@ -121,43 +141,49 @@ body *::selection {
 }
 
 .key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     height: 50px;
     width: 50px;
-    fill: white;
+    box-shadow: 0 0 5px white;
     cursor: pointer;
 }
 
-.key:hover {
-    fill: whitesmoke;
+.fas {
+    color: #5d5d5d;
 }
 
 .key:active {
-    height: 48px;
-    width: 48px;
+    transform: scale(.98, .98);
+}
+
+.key-active {
+    transform: scale(.98, .98);
 }
 
 .key-left {
     top: 50%;
-    transform: translateY(-50%);
+    margin-top: -25px;
     left: -250px;
 }
 
 .key-right {
     top: 50%;
-    transform: translateY(-50%);
+    margin-top: -25px;
     right: -250px;
 }
 
 .key-up {
     left: 50%;
-    transform: translateX(-50%);
+    margin-left: -25px;
     top: -200px;
 }
 
 .key-down {
     left: 50%;
-    transform: translateX(-50%);
+    margin-left: -25px;
     bottom: -200px;
 }
 
@@ -247,8 +273,11 @@ body *::selection {
     outline: none;
 }
 
-
 @media only screen and (max-width: 900px) {
+    .keys-tip {
+        display: none;
+    }
+
     .container {
         width: 250px;
         height: 250px;
@@ -424,25 +453,24 @@ body *::selection {
         width: 40px;
     }
 
-    .key:active {
-        height: 38px;
-        width: 38px;
-    }
-
     .key-left {
         left: -100px;
+        margin-top: -20px;
     }
 
     .key-right {
         right: -100px;
+        margin-top: -20px;
     }
 
     .key-up {
         top: -100px;
+        margin-left: -20px;
     }
 
     .key-down {
         bottom: -100px;
+        margin-left: -20px;
     }
 }
 
@@ -481,25 +509,24 @@ body *::selection {
         width: 35px;
     }
 
-    .key:active {
-        height: 33px;
-        width: 33px;
-    }
-
     .key-left {
         left: -90px;
+        margin-top: -17.5px;
     }
 
     .key-right {
         right: -90px;
+        margin-top: -17.5px;
     }
 
     .key-up {
         top: -90px;
+        margin-left: -17.5px;
     }
 
     .key-down {
         bottom: -90px;
+        margin-left: -17.5px;
     }
 }
 
