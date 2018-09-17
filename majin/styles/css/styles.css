@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.aquarium {
+  height: 100vh;
+  background: url("../../images/underwater.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+.aquarium__fishes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.aquarium canvas {
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

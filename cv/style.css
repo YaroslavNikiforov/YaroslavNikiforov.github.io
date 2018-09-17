@@ -14,8 +14,7 @@ img, i, button {
 section {
     height: 131vw;
     display: grid;
-    grid-template-columns: 34% 64%;
-    grid-gap: 2%;
+    grid-template-columns: 35% 65%;
     background: url("images/stardust.png") center;
 }
 
@@ -57,6 +56,10 @@ section {
 
 .content-left:nth-child(1) {
     height: 20%;
+}
+
+.content-left:last-child {
+    padding-bottom: 0;
 }
 
 .content-left:not(:last-child)::before {
@@ -309,8 +312,12 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 3vw 0 2vw;
+    padding: 3vw 0 2vw 2vw;
     flex-grow: 1;
+}
+
+.content-right:first-child {
+    padding-top: 2vw;
 }
 
 .content-right:not(:last-child)::before {
@@ -425,6 +432,11 @@ section {
     font-weight: 700;
 }
 
+.quality-icon-wrapper {
+    height: 100%;
+    position: relative;
+}
+
 .quality-text {
     margin: 0;
 }
@@ -432,5 +444,12 @@ section {
 .quality-icon {
     height: 2.7vw;
     width: auto;
+}
+
+.quality:first-child .quality-icon {
+    position: absolute;
+    top: 50%;
+    left: -11%;
+    transform: translateY(-50%);
 }
 

@@ -101,6 +101,18 @@ body *::selection {
     min-height: 100vh;
     height: 100%;
     overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.particles {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: black;
+    border: 1px solid white;
+    transform: translateZ(-1000px) scale(2.1, 2.1);
 }
 
 .particles-js-canvas-el {
@@ -149,6 +161,7 @@ body *::selection {
     width: 50px;
     box-shadow: 0 0 5px white;
     cursor: pointer;
+    z-index: 3;
 }
 
 .fas {

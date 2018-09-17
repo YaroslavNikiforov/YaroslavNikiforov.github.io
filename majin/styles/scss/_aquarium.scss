@@ -1,0 +1,18 @@
+.aquarium {
+  height: 100vh;
+  background: url("../../images/underwater.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+
+  &__fishes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  canvas {
+    width: 100%;
+  }
+}

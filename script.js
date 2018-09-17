@@ -3,7 +3,11 @@ let keyTip = document.body.querySelector('.keys-tip');
 
 $(document).ready(function () {
 
-    particlesJS.load('particles-js', 'particles.json', function () {
+    particlesJS.load('particles-js-one', 'particles-one.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+
+    particlesJS.load('particles-js-two', 'particles-one.json', function () {
         console.log('callback - particles.js config loaded');
     });
 
