@@ -15,7 +15,7 @@ section {
     height: 131vw;
     display: grid;
     grid-template-columns: 35% 65%;
-    background: url("images/stardust.png") center;
+    /*background: url("images/stardust.png") center;*/
 }
 
 .left-block,
@@ -26,7 +26,8 @@ section {
 }
 
 .left-block {
-    background: black url("images/stardust.png") center;
+    /*background: url("images/stardust.png") center;*/
+    background-color: black;
 }
 
 .left-block *::selection {
@@ -56,6 +57,10 @@ section {
 
 .content-left:nth-child(1) {
     height: 20%;
+}
+
+.content-left:nth-child(3) {
+    padding-bottom: 2vw;
 }
 
 .content-left:last-child {
@@ -257,52 +262,52 @@ section {
     background-color: black;
 }
 
-.technology:nth-of-type(1) .scale-white {
+.technology--javascript .scale-white {
     width: 82%;
 }
 
-.technology:nth-of-type(1) .scale-black {
+.technology--javascript .scale-black {
     width: 18%;
 }
 
-.technology:nth-of-type(2) .scale-white {
+.technology--html-css .scale-white {
     width: 97%;
 }
 
-.technology:nth-of-type(2) .scale-black {
+.technology--html-css .scale-black {
     width: 3%;
 }
 
-.technology:nth-of-type(3) .scale-white {
+.technology--react .scale-white {
     width: 60%;
 }
 
-.technology:nth-of-type(3) .scale-black {
+.technology--react .scale-black {
     width: 40%;
 }
 
-.technology:nth-of-type(4) .scale-white {
+.technology--nodejs .scale-white {
     width: 25%;
 }
 
-.technology:nth-of-type(4) .scale-black {
+.technology--nodejs .scale-black {
     width: 75%;
 }
 
-.technology:nth-of-type(5) .scale-white {
+.technology--java .scale-white {
     width: 50%;
 }
 
-.technology:nth-of-type(5) .scale-black {
+.technology--java .scale-black {
     width: 50%;
 }
 
-.technology:nth-of-type(6) .scale-white {
-    width: 60%;
+.technology--english .scale-white {
+    width: 50%;
 }
 
-.technology:nth-of-type(6) .scale-black {
-    width: 40%;
+.technology--english .scale-black {
+    width: 50%;
 }
 
 .content-right {

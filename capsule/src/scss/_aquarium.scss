@@ -1,0 +1,59 @@
+.aquarium {
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  background: url("../images/underwater.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  canvas {
+    width: 100%;
+  }
+
+  &__fish {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 500px;
+    z-index: 1;
+  }
+
+  &__title {
+    margin: 0 0 5vh;
+    padding: 0;
+    color: rgba(255, 255, 255, .2);
+    font-size: 20vw;
+    line-height: 1;
+    font-weight: 900;
+    background: url("../images/fishes.png") repeat;
+    -webkit-background-clip: text;
+    animation: animate 20s linear infinite;
+    cursor: default;
+
+    &::selection {
+      background-color: rgba(255, 255, 255, .1);
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+}
