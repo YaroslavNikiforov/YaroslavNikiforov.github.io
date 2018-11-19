@@ -1,9 +1,13 @@
+@import "mixin", "variables";
+
 .aquarium {
+  position: sticky;
+  top: 0;
   font-family: 'Lato', sans-serif;
   height: 100vh;
-  background: url("../images/underwater.jpg") no-repeat center;
+  background: url("../images/aquarium/underwater.jpg") no-repeat center;
   background-size: cover;
-  position: relative;
+  //position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -11,6 +15,7 @@
 
   canvas {
     width: 100%;
+    height: 100%;
   }
 
   &__fish {
@@ -22,38 +27,48 @@
   }
 
   &__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-box(center, center, row);
     width: 90%;
+    overflow: hidden;
     height: 500px;
-    z-index: 1;
+    z-index: 2;
   }
 
   &__title {
     margin: 0 0 5vh;
     padding: 0;
-    color: rgba(255, 255, 255, .2);
-    font-size: 20vw;
-    line-height: 1;
+    width: 100%;
+    color: darken(rgba(255, 255, 255, 0.4), 95%);
+    font-size: 17vw;
+    text-align: center;
+    line-height: 0.9;
     font-weight: 900;
-    background: url("../images/fishes.png") repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
     -webkit-background-clip: text;
-    animation: animate 20s linear infinite;
+    animation: shark 20s ease-in-out infinite;
     cursor: default;
+    user-select: none;
+  }
+}
 
-    &::selection {
-      background-color: rgba(255, 255, 255, .1);
-    }
+@keyframes shark {
+  from {
+    background-image: url("../images/aquarium/shark1.png");
+    background-position: -60% 0;
   }
 
-  @keyframes animate {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 100% 0;
-    }
+  50% {
+    background-image: url("../images/aquarium/shark1.png");
+    background-position: 160% 0;
   }
 
+  51% {
+    background-image: url("../images/aquarium/shark2.png");
+  }
+
+  to {
+    background-image: url("../images/aquarium/shark2.png");
+    background-position: -60% 0;
+  }
 }

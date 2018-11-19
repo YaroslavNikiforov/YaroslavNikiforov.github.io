@@ -1,0 +1,87 @@
+@import "mixin", "variables";
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  @include flex-box(center, center, row);
+  width: 100vw;
+  height: 100vh;
+  background-color: $colorOne;
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+    transform: translateX(-50%);
+  }
+
+  &__loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    perspective: 600px;
+  }
+
+  &__square {
+    position: absolute;
+    border: 5px solid $colorTwo;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      animation: preloader-rotation 8s linear infinite;
+    }
+
+    &:nth-child(2) {
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      animation: preloader-rotation 4s linear infinite;
+    }
+
+    &:nth-child(3) {
+      top: 24px;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      animation: preloader-rotation 2s linear infinite;
+    }
+
+    &::before {
+       position: absolute;
+       content: '';
+       top: -10px;
+       left: -10px;
+       width: 10px;
+       height: 50%;
+     }
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: -10px;
+      right: -10px;
+      width: 10px;
+      height: 50%;
+    }
+  }
+}
+
+@keyframes preloader-rotation {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}

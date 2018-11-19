@@ -1,0 +1,59 @@
+@import "mixin", "variables";
+
+.team {
+  position: sticky;
+  top: 0;
+  @include flex-box(center, center, row);
+  height: 100vh;
+  background-color: $colorOne;
+  overflow: hidden;
+
+    &__content {
+      position: absolute;
+      bottom: -100%;
+      text-align: center;
+      background: linear-gradient(0deg, $colorOne, transparent);
+      border-bottom-right-radius: inherit;
+      border-bottom-left-radius: inherit;
+      transition: .5s;
+    }
+
+    &__title {
+      margin: 10px 0 0;
+      color: $colorTwo;
+      font-size: 25px;
+
+      & span {
+        font-size: 20px;
+        color: #ffeb3b;
+      }
+    }
+
+    &__description {
+      margin: 20px 0;
+      padding: 0 20px;
+      color: $colorTwo;
+      font-size: 13px;
+    }
+
+    &__list {
+      @include flex-box(space-between, center, row);
+      width: 30%;
+      margin: 0 auto 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    &__link {
+      display: block;
+
+      i {
+        color: $colorTwo;
+        font-size: 20px;
+      }
+
+      &:hover i {
+        color: #ffeb3b;
+      }
+    }
+  }

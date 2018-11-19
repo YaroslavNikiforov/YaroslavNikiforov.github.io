@@ -1,0 +1,495 @@
+@import "mixin", "variables";
+
+.portfolio {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  //position: relative;
+  //z-index: 1;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+
+  &__particles {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: black;
+    border: 1px solid white;
+    transform: translateZ(-1000px) scale(2.1, 2.1);
+  }
+
+  &__keys-tip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s;
+    animation: flicker 0.1s infinite alternate;
+  }
+
+  &__container {
+    width: 300px;
+    height: 300px;
+    z-index: 3;
+    position: relative;
+    perspective: 1000px;
+  }
+
+  &__key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 0 5px white;
+    cursor: pointer;
+    z-index: 3;
+
+    &:active {
+      transform: scale(.98, .98);
+    }
+
+    &--left {
+      top: 50%;
+      margin-top: -25px;
+      left: -250px;
+    }
+
+    &--right {
+      top: 50%;
+      margin-top: -25px;
+      right: -250px;
+    }
+
+    &--up {
+      left: 50%;
+      margin-left: -25px;
+      top: -170px;
+    }
+
+    &--down {
+      left: 50%;
+      margin-left: -25px;
+      bottom: -170px;
+    }
+  }
+
+  .fas {
+    color: #5d5d5d;
+  }
+
+  &__cube {
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d;
+    transition: 1s;
+  }
+
+  &__side {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    box-shadow: 0 0 20px white;
+    backface-visibility: hidden;
+
+    &--front {
+      transform: translateZ(150px);
+
+      .portfolio__card {
+        background-image: url("../images/portfolio/theham.jpg");
+        transition: 7s;
+      }
+    }
+
+    &--back {
+      transform: rotateY(180deg) translateZ(150px);
+
+      .portfolio__card {
+        background-image: url("../images/portfolio/landing.jpg");
+        transition: 9s;
+      }
+    }
+
+    &--right {
+      transform: rotateY(90deg) translateZ(150px);
+
+      .portfolio__card {
+        background-image: url("../images/portfolio/forkio.jpg");
+        transition: 5s;
+      }
+    }
+
+    &--left {
+      transform: rotateY(-90deg) translateZ(150px);
+
+      .portfolio__card {
+        background-image: url("../images/portfolio/parallax.jpg");
+        transition: 5s;
+      }
+    }
+
+    &--top {
+      transform: rotateX(90deg) translateZ(150px);
+
+      .portfolio__card {
+        background-image: url("../images/portfolio/instagram.jpg");
+        transition: 2s;
+      }
+    }
+
+    &--bottom {
+      transform: rotateX(-90deg) translateZ(150px);
+
+      .portfolio__card {
+        background-image: url("../images/portfolio/ramda.jpg");
+        transition: 4s;
+      }
+    }
+
+  }
+
+  &__card {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background: no-repeat top;
+    background-size: cover;
+
+    &:hover {
+      background-position: bottom;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.particles-js-canvas-el {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+@keyframes flicker {
+  from {
+    transform: scale(0.97, 0.97);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+.key-active {
+  transform: scale(.98, .98);
+}
+
+@media only screen and (max-width: 900px) {
+  .portfolio {
+
+    &__keys-tip {
+      display: none;
+    }
+
+    &__container {
+      width: 250px;
+      height: 250px;
+    }
+
+    &__key {
+
+      &--left {
+        left: -200px;
+      }
+
+      &--right {
+        right: -200px;
+      }
+
+      &--up {
+        top: -180px;
+      }
+
+      &--down {
+        bottom: -180px;
+      }
+    }
+
+    &__side {
+
+      &--front {
+        transform: translateZ(125px);
+      }
+
+      &--back {
+        transform: rotateY(180deg) translateZ(125px);
+      }
+
+      &--right {
+        transform: rotateY(90deg) translateZ(125px);
+      }
+
+      &--left {
+        transform: rotateY(-90deg) translateZ(125px);
+      }
+
+      &--top {
+        transform: rotateX(90deg) translateZ(125px);
+      }
+
+      &--bottom {
+        transform: rotateX(-90deg) translateZ(125px);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .portfolio {
+
+    &__container {
+      width: 200px;
+      height: 200px;
+    }
+
+    &__key {
+
+      &--left {
+        left: -150px;
+      }
+
+      &--right {
+        right: -150px;
+      }
+
+      &--up {
+        top: -150px;
+      }
+
+      &--down {
+        bottom: -150px;
+      }
+    }
+
+    &__side {
+
+      &--front {
+        transform: translateZ(100px);
+      }
+
+      &--back {
+        transform: rotateY(180deg) translateZ(100px);
+      }
+
+      &--right {
+        transform: rotateY(90deg) translateZ(100px);
+      }
+
+      &--left {
+        transform: rotateY(-90deg) translateZ(100px);
+      }
+
+      &--top {
+        transform: rotateX(90deg) translateZ(100px);
+      }
+
+      &--bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .portfolio {
+
+    &__container {
+      width: 180px;
+      height: 180px;
+    }
+
+    &__key {
+
+      &--left {
+        left: -130px;
+      }
+
+      &--right {
+        right: -130px;
+      }
+
+      &--up {
+        top: -130px;
+      }
+
+      &--down {
+        bottom: -130px;
+      }
+    }
+
+    &__side {
+
+      &--front {
+        transform: translateZ(90px);
+      }
+
+      &--back {
+        transform: rotateY(180deg) translateZ(90px);
+      }
+
+      &--right {
+        transform: rotateY(90deg) translateZ(90px);
+      }
+
+      &--left {
+        transform: rotateY(-90deg) translateZ(90px);
+      }
+
+      &--top {
+        transform: rotateX(90deg) translateZ(90px);
+      }
+
+      &--bottom {
+        transform: rotateX(-90deg) translateZ(90px);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .portfolio {
+
+    &__container {
+      width: 150px;
+      height: 150px;
+    }
+
+    &__key {
+      height: 40px;
+      width: 40px;
+
+      &--left {
+        left: -100px;
+        margin-top: -20px;
+      }
+
+      &--right {
+        right: -100px;
+        margin-top: -20px;
+      }
+
+      &--up {
+        top: -100px;
+        margin-left: -20px;
+      }
+
+      &--down {
+        bottom: -100px;
+        margin-left: -20px;
+      }
+    }
+
+    &__side {
+
+      &--front {
+        transform: translateZ(75px);
+      }
+
+      &--back {
+        transform: rotateY(180deg) translateZ(75px);
+      }
+
+      &--right {
+        transform: rotateY(90deg) translateZ(75px);
+      }
+
+      &--left {
+        transform: rotateY(-90deg) translateZ(75px);
+      }
+
+      &--top {
+        transform: rotateX(90deg) translateZ(75px);
+      }
+
+      &--bottom {
+        transform: rotateX(-90deg) translateZ(75px);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .portfolio {
+
+    &__container {
+      width: 130px;
+      height: 130px;
+    }
+
+    &__key {
+      height: 35px;
+      width: 35px;
+
+      &--left {
+        left: -90px;
+        margin-top: -17.5px;
+      }
+
+      &--right {
+        right: -90px;
+        margin-top: -17.5px;
+      }
+
+      &--up {
+        top: -90px;
+        margin-left: -17.5px;
+      }
+
+      &--down {
+        bottom: -90px;
+        margin-left: -17.5px;
+      }
+    }
+
+    &__side {
+
+      &--front {
+        transform: translateZ(65px);
+      }
+
+      &--back {
+        transform: rotateY(180deg) translateZ(65px);
+      }
+
+      &--right {
+        transform: rotateY(90deg) translateZ(65px);
+      }
+
+      &--left {
+        transform: rotateY(-90deg) translateZ(65px);
+      }
+
+      &--top {
+        transform: rotateX(90deg) translateZ(65px);
+      }
+
+      &--bottom {
+        transform: rotateX(-90deg) translateZ(65px);
+      }
+    }
+  }
+}
