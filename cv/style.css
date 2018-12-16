@@ -376,7 +376,7 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 2vw;
     width: 100%;
 }
@@ -386,7 +386,7 @@ section {
 }
 
 .project-description {
-    margin: 0 0 10px;
+    margin: 0;
     font-size: 1.5vw;
 }
 
